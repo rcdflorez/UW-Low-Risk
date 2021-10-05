@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="icon" href="./img/icon.png" />
+        <title>Templates</title>
+    </head>
+    
+    <body>
+        <header class="">
+            <div class="container-logo mx-sm-5 text-center text-sm-start"> <a href="/"><img src="../img/explore_credit_color_RGB.png" alt="LOGO" width="100"></a>
+
+            </div>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+            <script src="https://sdk.berbix.com/latest/berbix-verify.js"></script>
+            <script src="https://js.stripe.com/v3/"></script>
+        </header>
+        <div class="container-fluid">
+            <div class="container-md my-4 text-center" id="nav-steps-container">
+                <div class="row">
+                    <div class="col-md-11 mx-auto" id="testDiv">
+                        <div id="step-nav" class="step-nav d-flex flex-column justify-content-center mx-sm-5 align-items-center">
+                            <div id="stepsContainer" class="container d-flex align-items-center justify-content-center"
+                            style="padding: 0 33px;"> <a class="active-nav" href=""><span>1</span><p>Debit Card Verification</p></a>  <small></small> 
+                                <a
+                                href=""><span>2</span>
+
+                                    <p>ID Verification</p>
+                                    </a> <small></small> <a class="" href=""><span>3</span><p>Bank Verification</p></a>
+                            </div>
+                            <div class="p-0 container d-flex justify-content-between">
+                                 <h6 class="active-nav">ID Verification</h6>
+                                 <h6>Bank Verification</h6>
+                                 <h6>Debit Card Verification</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md my-4 text-center">
+                <div class="row">
+                    <div class="col">
+                        <div class="content content-lg mx-sm-5 align-items-center">
+                            <div class="bank-list my-4">
+                                <div class="search container px-1 d-flex flex-row justify-content-center align-items-center">
+                                    <input class="px-0 " type="search" name="" id="" placeholder="Bank Search">
+                                    <button class="btn">
+                                        <img src="./img/search-interface-symbol.png" alt="" width="34">
+                                    </button>
+                                </div>
+                                <div class="container-cards">
+                                    <div class="row m-0 p-0">
+                                        <div class="my-2 col-12 col-md-6 col-lg-4 p-0">
+                                            <div class="card-bank">
+                                                <button class="btn p-1 d-flex align-items-center">
+                                                    <div class="container-img">
+                                                        <img src="./img/wells-fargo.png" alt="bank" width="50">
+                                                    </div>
+                                                    <div class="info-card text-start">
+                                                         <h6>LendMate Test Bank</h6> <a href="">https://www.wellsfargo.com</a>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="my-2 col-12 col-md-6 col-lg-4 p-0">
+                                            <div class="card-bank">
+                                                <button class="btn p-1 d-flex align-items-center">
+                                                    <div class="container-img">
+                                                        <img src="./img/wells-fargo.png" alt="bank" width="50">
+                                                    </div>
+                                                    <div class="info-card text-start">
+                                                         <h6>Bank of America</h6> <a href="">https://www.wellsfargo.com</a>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="my-2 col-12 col-md-6 col-lg-4 p-0">
+                                            <div class="card-bank">
+                                                <button class="btn p-1 d-flex align-items-center">
+                                                    <div class="container-img">
+                                                        <img src="./img/wells-fargo.png" alt="bank" width="50">
+                                                    </div>
+                                                    <div class="info-card text-start">
+                                                         <h6>Wells Fargo</h6> <a href="">https://www.wellsfargo.com</a>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="my-2 col-12 col-md-6 col-lg-4 p-0">
+                                            <div class="card-bank">
+                                                <button class="btn p-1 d-flex align-items-center">
+                                                    <div class="container-img">
+                                                        <img src="./img/wells-fargo.png" alt="bank" width="50">
+                                                    </div>
+                                                    <div class="info-card text-start">
+                                                         <h6>Chase Bank</h6> <a href="">https://www.wellsfargo.com</a>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="my-2 col-12 col-md-6 col-lg-4 p-0">
+                                            <div class="card-bank">
+                                                <button class="btn p-1 d-flex align-items-center">
+                                                    <div class="container-img">
+                                                        <img src="./img/wells-fargo.png" alt="bank" width="50">
+                                                    </div>
+                                                    <div class="info-card text-start">
+                                                         <h6>Usaa</h6> <a href="">https://www.wellsfargo.com</a>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="my-2 col-12 col-md-6 col-lg-4 p-0">
+                                            <div class="card-bank">
+                                                <button class="btn p-1 d-flex align-items-center">
+                                                    <div class="container-img">
+                                                        <img src="./img/wells-fargo.png" alt="bank" width="50">
+                                                    </div>
+                                                    <div class="info-card text-start">
+                                                         <h6>PNC Bank</h6> <a href="">https://www.wellsfargo.com</a>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <span class="my-4">if you having trouble with bank account verification can upload your recent three banks statements <a href="">here</a>.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-md my-3 text-center contact px-sm-4 ">
+                <p class="mx-sm-5 px-sm-5 mb-5">If you're experiencing any issues or if you'd like to speak with one of
+                    our customer service representatives, please call or text <a href="">844-355-5625</a> Monday
+                    - Friday 8-am - 8pm EST and Saturdays from 8am -5pm EST. You can also email
+                    our team at <a href="">support@explorecredit.com</a>.</p>
+            </div>
+        </div>
+        <footer class="footer container text-center ">
+            <p>© Copyrigth 2021 Explore Credit.</p>
+        </footer>
+        <script src="./js/all.js"></script>
+    </body>
+
+</html>

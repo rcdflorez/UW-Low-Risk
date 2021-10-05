@@ -1,0 +1,179 @@
+<style>
+    header{
+        background-color: #fff;
+        padding: 1rem;
+        border-bottom: 1px solid #bdbdbd;
+    }
+    .styleExplore .grey{
+        color: #444;
+    }
+    .styleExplore p , .styleExplore h1{
+        color: #162449 ;
+    }
+    .styleExplore a{
+        color: #2FC8EB;
+        text-decoration: none;
+        font-weight: bolder;
+    }
+    .styleExplore{
+        background-image: none;
+        background-color: #EDEDED;
+    }
+
+    .styleExplore .login-btn{
+        background-color: #162449;
+        border: none;
+    }
+
+    .styleExplore .dashed-container{
+        background-image: none;
+        border: 5px dashed #2FC8EB;
+    }
+
+    @media (max-width: 768px) {
+        .styleExplore .dashed-container {
+            border: none !important;
+        }
+    }
+</style>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row d-flex justify-content-center p-3 p-md-0 p-2 ">
+            <div class="col col-12 col-md-12 text-center fw-light">
+                 <h1 class="fs-1 m-0">
+                        Please provide us with your three most recent checking account statements
+                    </h1>
+
+                <p class="fs-2 fw-bolder m-0 pb-3 pb-md-4 d-none d-md-block">Recomended file types are .pdf, .jpg, .jpeg, .png</p>
+                <p class="fs-2 fw-bolder m-0 pb-0 pb-md-4 d-block d-md-none">Recomended file types are</p>
+                <p class="fs-2 fw-bolder m-0 pb-3 pb-md-4 d-block d-md-none">.pdf, .jpg, .jpeg, .png</p>
+            </div>
+            <div class="col-md-12 bg-white py-md-3 px-md-4 rounded text-center fw-light"
+            style="box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.125);">
+                <div class="row">
+                    <div class="drop-zone-container pt-5 pt-md-1">
+                        <div id="uploaderDiv" class="rounded px-3 px-md-5 py-3 dashed-container col-md-12 pb-5 pb-md-1">
+                            <img class="d-none d-md-block m-auto mt-4 mb-2" src="img/upload.png" alt="upload">
+                            <p class="d-none d-md-block fs-3 fw-normal mb-2">Drop file(s) to upload</p>
+                            <p class="fs-3 fw-normal d-none d-md-block mb-2">or</p>
+                            <div class="bottom-btn-col-2 col-md-5 mb-4 m-auto py-md-3 justify-content-center bg-white rounded"> <span class="upload-btn btn btn-primary w-100 w-md-50 m-auto py-3 login-btn d-flex justify-content-center align-items-center">
+                              <span
+                  class="px-2 upload-btn-text">SELECT FILES</span></span>
+                            </div>
+                            <!-- <button type="submit" class="btn btn-primary w-100 m-auto py-3 login-btn
+                            d-flex justify-content-center align-items-center"><img class="" src="img/lock.svg" style="max-width: 13px;"><span class="px-2">LOGIN</span></button>
+                  -->
+                            <p class="fs-6 fw-normal mt-md-3 grey">Maximum upload file size: 5 MB.</p>
+                        </div>
+                        <div class="text-center d-none mt-3"> <a href="#" class=""> Upload Help & Tips</a>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 d-none" id="previews">
+                        <div class="border-top"></div>
+                    </div>
+                </div>
+                <div class="bottom-btn-col col-12 px-3 px-md-1 py-3 d-none justify-content-center bg-white rounded"> <span class="submit-btn btn btn-primary w-100 m-auto px-5 py-3 login-btn d-flex justify-content-center align-items-center"><span
+              class="px-2">SUBMIT FILES</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tpl" class="d-none">
+        <div class="dz-preview dz-file-preview py-3 border-bottom">
+            <div class="dz-details">
+                <div class="row">
+                    <div class="col-2 d-flex justify-content-center">
+                        <img data-dz-thumbnail style="max-width: 100%;" />
+                    </div>
+                    <div class="col-9 pl-1">
+                        <div class="row text-start">
+                            <div class="dz-filename col-12 text-truncate"><span data-dz-name></span>
+                            </div>
+                            <div class="dz-size col-12" data-dz-size></div>
+                        </div>
+                    </div>
+                    <div class="col-1 d-flex align-items-center p-0">
+                        <img src="img/delete.webp" style="max-width: 20px;" alt="x" data-dz-remove
+                        />
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="dz-progress"><span class="dz-upload d-flex" style="border: solid 1px red;"
+          data-dz-uploadprogress></span></div>
+          <div class="dz-success-mark start"><span>✔</span></div>
+          <div class="dz-error-mark"><span>✘</span></div>
+          <div class="dz-error-message"><span data-dz-errormessage></span></div>
+        </div>--></div>
+    </div>
+</div>
+<script>
+    $(function() {
+
+
+
+        let emptyContainer = 0;
+
+        var myUploader = new Dropzone(document.getElementById("uploaderDiv"), {
+
+            url: "./",
+            previewTemplate: document.querySelector('#tpl').innerHTML,
+            autoQueue: false,
+            addRemoveLinks: false,
+            previewsContainer: "#previews",
+            clickable: ".upload-btn",
+            thumbnailWidth: 80,
+            thumbnailHeight: 80,
+            uploadprogress: function(file, progress, bytesSent) {
+                console.log(progress + "000");
+            },
+            acceptedFiles: 'image/*,.pdf',
+            capture: true,
+            maxFiles: 5,
+            maxFilesize: 20,
+
+
+        });
+
+        myUploader.on("addedfile", function(file) {
+
+
+            if (emptyContainer === 0) {
+
+                $(".drop-zone-container").addClass("col-md-4");
+                $("#previews").removeClass("d-none");
+                $(".bottom-btn-col").removeClass("d-none");
+                $(".bottom-btn-col").addClass("d-flex");
+                $(".bottom-btn-col-2").removeClass("col-md-5")
+            }
+            emptyContainer = emptyContainer + 1;
+
+
+        });
+        myUploader.on("processing", function(file) {})
+        myUploader.on("removedfile", function(file) {
+            if (myUploader.getAcceptedFiles().length === 0) {
+                emptyContainer = 0;
+                $("#previews").addClass("d-none");
+                $(".drop-zone-container").removeClass("col-md-4");
+                $(".bottom-btn-col").addClass("d-none");
+            }
+        })
+
+        myUploader.on("maxfilesreached", function(file) {
+
+            if (this.file[1] != null) {
+                this.removeFile(this.file[0]);
+            }
+
+
+        })
+
+
+        if (window.matchMedia("(max-width: 767px)").matches) {
+
+            $(".upload-btn").prepend('<img class="" src="img/Camera_icon_mask.svg.png" style="max-width: 20px;">');
+            $(".upload-btn-text").html('TAKE PHOTOS');
+        }
+    })
+</script>
